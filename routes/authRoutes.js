@@ -10,12 +10,18 @@ module.exports = app => {
   );
   
   //After obtaining user permission, present token to Google to get user info
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get(
+    '/auth/google/callback',
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/surveys');
+    }
+  );
 
   //deauthenticate user and kill their cookie
   app.get('/api/logout', (req, res) => {
     req.logout();
-    res.send(req.user);
+    res.redirect('/');
   });
 
   //check the login status of current user
