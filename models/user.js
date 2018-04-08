@@ -6,5 +6,4 @@ const userSchema = new Schema({
   credits: { type: Number, default: 0 }
 });
 
-//create collection, if does not already exist
 mongoose.model('users', userSchema);
