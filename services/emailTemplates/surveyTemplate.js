@@ -2,7 +2,7 @@ module.exports = (survey) => {
   return `
     <html>
       <body>
-        <div stlye="text-allign: center;">
+        <div style="text-allign: center;">
           <h3>I'd like your input!</h3>
           <p>Please answer the following question:</p>
           <p>${survey.body}</p>
